@@ -1,9 +1,6 @@
 #include "diva.h"
-#include "toml.h"
 
 using namespace diva;
-
-char modsPrefix[MAX_PATH];
 
 struct ScaleDb {
 	i32 state;
@@ -127,17 +124,6 @@ HOOK (i64, PvGamePvDataCtrl, 0x14024EB50, u64 a1, f32 delta, i64 curr, bool a4) 
 extern "C" {
 __declspec (dllexport) void
 init () {
-	auto file   = fopen ("../../config.toml", "r");
-	auto config = toml_parse_file (file, nullptr, 0);
-	fclose (file);
-	if (config) {
-		auto data = toml_string_in (config, "mods");
-		if (data.ok) strcpy (modsPrefix, data.u.s);
-		else strcpy (modsPrefix, "mods");
-	} else {
-		strcpy (modsPrefix, "mods");
-	}
-
 	scale_db.state  = 0;
 	scale_db.romDir = 0;
 
