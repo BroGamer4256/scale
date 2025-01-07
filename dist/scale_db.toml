@@ -6,3 +6,14 @@ scale = 0.9
 chara = 0
 cos = 0
 scale = 1.1
+
+# CHARA_MIKU   = 0
+# CHARA_RIN    = 1
+# CHARA_LEN    = 2
+# CHARA_LUKA   = 3
+# CHARA_NERU   = 4
+# CHARA_HAKU   = 5
+# CHARA_KAITO  = 6
+# CHARA_MEIKO  = 7
+# CHARA_SAKINE = 8
+# CHARA_TETO   = 9
