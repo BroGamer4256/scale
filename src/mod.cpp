@@ -47,7 +47,7 @@ HOOK (bool, PvDbRead, 0x1404BB290, u64 task) {
 			auto data = (char *)FileGetData (&scale_db.fileHandler);
 			auto size = FileGetSize (&scale_db.fileHandler);
 			if (!data || size == 0) {
-				scale_db.state = 1;
+				scale_db.state = 0;
 				scale_db.romDir++;
 				break;
 			}
@@ -82,6 +82,8 @@ HOOK (bool, PvDbRead, 0x1404BB290, u64 task) {
 						scale_db.cosScale[std::pair ((i32)chara.u.i, (i32)cos.u.i)] = (f32)scale.u.d;
 					}
 				}
+
+				toml_free (toml);
 			} else {
 				printf ("Failed to parse %s: %s\n", romDirs->at (scale_db.romDir).value ()->c_str (), errbuf);
 			}
