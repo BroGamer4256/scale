@@ -88,6 +88,7 @@ HOOK (bool, PvDbRead, 0x1404BB290, u64 task) {
 				printf ("Failed to parse %s: %s\n", romDirs->at (scale_db.romDir).value ()->c_str (), errbuf);
 			}
 
+			FreeFileHandler (scale_db.fileHandler);
 			scale_db.state = 0;
 			scale_db.romDir++;
 			break;

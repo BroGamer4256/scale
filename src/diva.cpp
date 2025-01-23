@@ -9,6 +9,7 @@ FUNCTION_PTR (bool, FileRequestLoad, 0x1402A4710, void *fileHandler, char *file,
 FUNCTION_PTR (bool, FileCheckNotReady, 0x151C03830, void *fileHandler);
 FUNCTION_PTR (const void *, FileGetData, 0x151C0EF70, void *fileHandler);
 FUNCTION_PTR (size_t, FileGetSize, 0x151C7ADA0, void *fileHandler);
+FUNCTION_PTR (void, FreeFileHandler, 0x1402A4E90, void *fileHandler);
 
 vector<string> *romDirs = (vector<string> *)0x1414AB8A0;
 } // namespace diva

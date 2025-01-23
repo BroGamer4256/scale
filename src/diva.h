@@ -337,4 +337,5 @@ FUNCTION_PTR_H (bool, FileRequestLoad, void *fileHandler, char *file, bool);
 FUNCTION_PTR_H (bool, FileCheckNotReady, void *fileHandler);
 FUNCTION_PTR_H (const void *, FileGetData, void *fileHandler);
 FUNCTION_PTR_H (size_t, FileGetSize, void *fileHandler);
+FUNCTION_PTR_H (void, FreeFileHandler, void *fileHandler);
 } // namespace diva
